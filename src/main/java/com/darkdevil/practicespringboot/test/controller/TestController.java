@@ -1,6 +1,8 @@
 package com.darkdevil.practicespringboot.test.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +14,9 @@ public class TestController {
 
     @Value("${megatron.tax.url}")
     private String taxWsUrl;
+
+    @Autowired
+    Environment env;
 
     @GetMapping(value = "/test")
     public String test(){
@@ -26,7 +31,7 @@ public class TestController {
     @GetMapping(value="/test2")
     public boolean test2(){
 
-        return true;
+        return Boolean.parseBoolean(env.getProperty("STATUS_1"));
     }
 
     @GetMapping(value = "/test3")

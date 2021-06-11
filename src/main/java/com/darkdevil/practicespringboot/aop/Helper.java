@@ -66,7 +66,21 @@ public class Helper {
 
 
 // ###############################################################################################
+//    @Before("execution(* com.darkdevil.practicespringboot.test..*(..)) || execution(* com.darkdevil.practicespringboot.example1..*(..))")
+//    @Before("execution(public String test()) || execution(public String test1())")
+//    public void log(){
+//        System.out.println("logging...");
+//    }
 
+//    @AfterReturning(value = "execution(* com.darkdevil.practicespringboot..*(..))", returning = "response", argNames = "joinPoint,response")
+//    public void adviceBeforeResponseEntity(JoinPoint joinPoint, Object response){
+//        System.out.println("Response: " + response.toString());
+//        System.out.println("End advice");
+//    }
 
-
+    @Before(value = "execution(* createPost(..)) && args(dto) || execution(* updatePost(..)) && args(dto)", argNames = "joinPoint,dto")
+    public void adviceBefore(JoinPoint joinPoint, Object dto){
+        System.out.println("Begin advice");
+        System.out.println("Request: " + dto.toString());
+    }
 }
