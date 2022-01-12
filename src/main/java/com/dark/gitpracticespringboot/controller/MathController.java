@@ -38,6 +38,8 @@ public class MathController {
 
         String response = suffix + name + prefix;
 
+        sayUpper();
+
         return response;
     }
 
@@ -63,4 +65,9 @@ public class MathController {
     public void sayLower(){
         System.out.println("lower");
     }
+
+    public void sayUpper(){
+        System.out.println("Upper");
+    }
+
 }
