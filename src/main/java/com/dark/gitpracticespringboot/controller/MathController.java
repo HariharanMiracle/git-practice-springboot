@@ -36,7 +36,12 @@ public class MathController {
 
         String response = suffix + name + prefix;
 
+        sayLower();
+
         return response;
     }
 
+    public void sayLower(){
+        System.out.println("lower");
+    }
 }
