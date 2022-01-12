@@ -32,8 +32,8 @@ public class MathController {
 
         int length = name.length();
 
-        int suffix = length + 4;
-        name = "_" + name.toUpperCase() + "_";
+        int suffix = length * 4;
+        name = "-" + name.toUpperCase() + "-";
         String prefix = env.getProperty("name.upper.value");
 
         String response = suffix + name + prefix;
