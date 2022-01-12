@@ -41,4 +41,21 @@ public class MathController {
         return response;
     }
 
+    /**
+     * http://localhost:9090/math/name/lower/KamAl
+     * */
+    @GetMapping("name/lower/{name}")
+    public String nameLower(@PathVariable String name){
+
+        int length = name.length();
+
+        int suffix = length + 4;
+        name = "_" + name.toLowerCase() + "_";
+        String prefix = env.getProperty("name.lower.value");
+
+        String response = suffix + name + prefix;
+
+        return response;
+    }
+
 }
