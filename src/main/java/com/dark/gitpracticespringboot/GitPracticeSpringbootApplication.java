@@ -8,6 +8,7 @@ public class GitPracticeSpringbootApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GitPracticeSpringbootApplication.class, args);
+		System.out.println("Hello GitPracticeSpringbootApplication");
 	}
 
 }
